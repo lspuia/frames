@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
+import { SITE_URL } from "./_lib/seo";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -10,7 +11,7 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.framesmizoram.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Frames — uPVC Windows & Doors in Mizoram | Coming Soon",
   description:
     "Frames brings German-engineered uPVC windows and doors to Mizoram — casement, sliding and tilt-and-turn systems built for heavy rain, wind and noise, supplied and installed in Aizawl and across the state. Website launching soon.",

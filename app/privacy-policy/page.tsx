@@ -9,14 +9,14 @@ const LAST_UPDATED = "3 August 2026";
 export const metadata: Metadata = {
   title: "Privacy Policy | Frames — uPVC Windows & Doors in Mizoram",
   description:
-    "How framesmizoram.com handles visitor information: no forms, no cookies and no tracking. Frames supplies and installs uPVC windows and doors in Aizawl and across Mizoram.",
+    "How framesmizoram.in handles visitor information: no forms, no cookies and no tracking. Frames supplies and installs uPVC windows and doors in Aizawl and across Mizoram.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/privacy-policy" },
   openGraph: {
     ...OG_BASE,
     title: "Privacy Policy | Frames",
     description:
-      "How framesmizoram.com handles visitor information: no forms, no cookies and no tracking.",
+      "How framesmizoram.in handles visitor information: no forms, no cookies and no tracking.",
     url: "/privacy-policy",
   },
 };
@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
           <p className={styles.lead}>
             Frames supplies and installs uPVC windows and doors in Aizawl and
             across Mizoram. This policy covers what happens to your information
-            when you visit framesmizoram.com. The short version: this is a
+            when you visit framesmizoram.in. The short version: this is a
             single page announcing our launch, it has no forms and no tracking,
             and it collects nothing about you.
           </p>
@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Server logs</h2>
             <p className={styles.body}>
-              Like every website, framesmizoram.com is delivered by a hosting
+              Like every website, framesmizoram.in is delivered by a hosting
               provider, and that provider automatically records standard
               technical details with each request — typically the IP address,
               the browser and device type, the page requested and the time it
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
             <h2 className={styles.sectionTitle}>Links to other websites</h2>
             <p className={styles.body}>
               Our footer links to our social media profiles. Following one of
-              those links takes you off framesmizoram.com, and from that point
+              those links takes you off framesmizoram.in, and from that point
               the privacy policy of the platform you have landed on applies. We
               have no control over how those platforms handle your information,
               and we receive nothing back from them when you click.

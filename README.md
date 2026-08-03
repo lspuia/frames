@@ -2,7 +2,7 @@
 
 Single-page coming-soon site for **Frames**, a uPVC windows and doors vertical serving
 Aizawl and the rest of Mizoram. It exists mainly so the domain
-**https://www.framesmizoram.com** is indexed ahead of the full launch, so the SEO
+**https://www.framesmizoram.in** is indexed ahead of the full launch, so the SEO
 metadata and structured data matter as much as the layout.
 
 Next.js (App Router) + TypeScript, plain CSS, deployed on Vercel.
@@ -63,6 +63,6 @@ footer/meta labels 600.
 
 ## Deploying
 
-Vercel, custom domain `www.framesmizoram.com`, apex `framesmizoram.com` redirecting
+Vercel, custom domain `www.framesmizoram.in`, apex `framesmizoram.in` redirecting
 to `www`. After the first deploy: verify the domain in Google Search Console, submit
 `sitemap.xml`, then request indexing for `/`.

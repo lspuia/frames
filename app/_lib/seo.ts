@@ -7,4 +7,6 @@ export const OG_BASE = {
   locale: "en_IN",
 } as const;
 
-export const SITE_URL = "https://www.framesmizoram.com";
+/* Canonical origin. Single source of truth — metadataBase, robots.ts, sitemap.ts
+   and the JSON-LD all derive from it, so a domain change is a one-line edit. */
+export const SITE_URL = "https://www.framesmizoram.in";

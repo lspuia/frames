@@ -22,7 +22,7 @@ function SiteHeader() {
         />
       </Link>
       <div className={styles.headerMeta}>
-        <div>framesmizoram.com</div>
+        <div>framesmizoram.in</div>
         <div>Aizawl · Mizoram · India</div>
       </div>
     </header>

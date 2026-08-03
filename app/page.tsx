@@ -24,8 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-const SITE = SITE_URL;
-
 /* What we supply, as an offer catalog — taken from the supply list on the page.
    Add telephone, email and the full address to the business node once the owner
    provides them. */
@@ -44,21 +42,21 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": `${SITE}/#website`,
-      url: `${SITE}/`,
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
       name: "Frames",
       inLanguage: "en-IN",
-      publisher: { "@id": `${SITE}/#business` },
+      publisher: { "@id": `${SITE_URL}/#business` },
     },
     {
       "@type": "LocalBusiness",
-      "@id": `${SITE}/#business`,
+      "@id": `${SITE_URL}/#business`,
       name: "Frames",
       description:
         "Supply and installation of uPVC windows and doors in Aizawl and across Mizoram, India.",
-      url: `${SITE}/`,
-      image: `${SITE}/og-image.jpg`,
-      logo: `${SITE}/frames-logo.png`,
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}/og-image.jpg`,
+      logo: `${SITE_URL}/frames-logo.png`,
       areaServed: { "@type": "State", name: "Mizoram" },
       address: {
         "@type": "PostalAddress",
