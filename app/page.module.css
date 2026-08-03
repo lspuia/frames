@@ -1,0 +1,129 @@
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+/* — left cell: the copy — */
+
+.copy {
+  padding: clamp(40px, 7vw, 88px) clamp(20px, 5vw, 72px);
+  border-right: 2px solid var(--color-divider);
+}
+
+.tagRow {
+  margin-bottom: 28px;
+}
+
+.tagText {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-weight: 700;
+  font-size: clamp(38px, 6.4vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px;
+  text-wrap: balance;
+}
+
+.lead {
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.55;
+  max-width: 46ch;
+  margin: 0 0 20px;
+  text-wrap: pretty;
+}
+
+.secondary {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 52ch;
+  margin: 0;
+  color: var(--color-neutral-700);
+  text-wrap: pretty;
+}
+
+/* — right cell: photo + supply list — */
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-height: 0;
+}
+
+/* `flex: 1 1 auto` + a definite min-height, never `flex: 1` — with a basis of 0
+   this box collapses to 0px inside the auto-height column and the photo vanishes. */
+.shot {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 380px;
+  overflow: hidden;
+  background: var(--color-neutral-200);
+}
+
+.shot img {
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+.supply {
+  padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 48px);
+  border-top: 2px solid var(--color-divider);
+}
+
+.supplyLabel {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+  margin-bottom: 10px;
+}
+
+.supplyBody {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* — tablet — */
+
+@media (max-width: 1023px) {
+  .main {
+    display: block;
+  }
+
+  .copy {
+    border-right: 0;
+    border-bottom: 2px solid var(--color-divider);
+  }
+
+  .shot {
+    flex: none;
+    height: 52vh;
+    max-height: 520px;
+  }
+
+  .shot img {
+    object-position: 28% 74%;
+  }
+}
+
+/* — phone — */
+
+@media (max-width: 640px) {
+  /* The source photo is 2:3, so a wide short box crops the subject out entirely. */
+  .shot {
+    flex: none;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 4 / 5;
+  }
+
+  .shot img {
+    object-position: 26% 70%;
+  }
+}

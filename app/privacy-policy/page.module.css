@@ -1,0 +1,57 @@
+.main {
+  flex: 1;
+  padding: clamp(40px, 7vw, 88px) clamp(20px, 5vw, 72px);
+}
+
+.inner {
+  max-width: 68ch;
+}
+
+.title {
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  text-wrap: balance;
+}
+
+.todo {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 14px 18px;
+  background: var(--color-accent-100);
+  color: var(--color-accent-800);
+  text-wrap: pretty;
+}
+
+.section {
+  border-top: 2px solid var(--color-divider);
+  margin-top: 36px;
+  padding-top: 24px;
+}
+
+.sectionTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 10px;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.body:last-child {
+  margin-bottom: 0;
+}
+
+.pending {
+  color: var(--color-neutral-700);
+}
