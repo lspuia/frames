@@ -11,14 +11,16 @@ const FACEBOOK_URL = "https://facebook.com/";
 function SiteHeader() {
   return (
     <header className={styles.header}>
-      <Image
-        src="/frames-logo.png"
-        alt="Frames"
-        width={320}
-        height={108}
-        priority
-        className={styles.logo}
-      />
+      <Link href="/" aria-label="Frames — home" className={styles.logoLink}>
+        <Image
+          src="/frames-logo.png"
+          alt="Frames"
+          width={320}
+          height={108}
+          priority
+          className={styles.logo}
+        />
+      </Link>
       <div className={styles.headerMeta}>
         <div>framesmizoram.com</div>
         <div>Aizawl · Mizoram · India</div>

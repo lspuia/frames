@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteShell } from "./_components/site-shell";
+import { OG_BASE, SITE_URL } from "./_lib/seo";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   /* Next normalizes the trailing slash away; the rendered URL is equivalent. */
   alternates: { canonical: "/" },
   openGraph: {
+    ...OG_BASE,
     title: "Frames — uPVC Windows & Doors in Mizoram",
     description:
       "uPVC windows and doors for homes and buildings in Aizawl and across Mizoram. Launching soon.",
@@ -22,27 +24,65 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE = SITE_URL;
+
+/* What we supply, as an offer catalog — taken from the supply list on the page.
+   Add telephone, email and the full address to the business node once the owner
+   provides them. */
+const SUPPLIES = [
+  "uPVC casement windows",
+  "uPVC sliding windows",
+  "Tilt-and-turn windows",
+  "uPVC sliding doors",
+  "uPVC casement doors",
+  "Mosquito mesh",
+  "Double glazing",
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Frames",
-  description:
-    "Supply and installation of uPVC windows and doors in Aizawl and across Mizoram, India.",
-  url: "https://www.framesmizoram.com/",
-  areaServed: { "@type": "State", name: "Mizoram" },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Aizawl",
-    addressRegion: "Mizoram",
-    addressCountry: "IN",
-  },
-  knowsAbout: [
-    "uPVC windows",
-    "uPVC doors",
-    "casement windows",
-    "sliding windows",
-    "tilt and turn windows",
-    "window installation",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      url: `${SITE}/`,
+      name: "Frames",
+      inLanguage: "en-IN",
+      publisher: { "@id": `${SITE}/#business` },
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE}/#business`,
+      name: "Frames",
+      description:
+        "Supply and installation of uPVC windows and doors in Aizawl and across Mizoram, India.",
+      url: `${SITE}/`,
+      image: `${SITE}/og-image.jpg`,
+      logo: `${SITE}/frames-logo.png`,
+      areaServed: { "@type": "State", name: "Mizoram" },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Aizawl",
+        addressRegion: "Mizoram",
+        addressCountry: "IN",
+      },
+      knowsAbout: [
+        "uPVC windows",
+        "uPVC doors",
+        "casement windows",
+        "sliding windows",
+        "tilt and turn windows",
+        "window installation",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "uPVC windows and doors",
+        itemListElement: SUPPLIES.map((name) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Product", name },
+        })),
+      },
+    },
   ],
 };
 
@@ -93,7 +133,7 @@ export default function Home() {
               />
             </div>
             <div className={styles.supply}>
-              <div className={styles.supplyLabel}>What we supply</div>
+              <h2 className={styles.supplyLabel}>What we supply</h2>
               <div className={styles.supplyBody}>
                 uPVC casement &amp; sliding windows, tilt-and-turn windows,
                 sliding &amp; casement doors, mosquito mesh, double glazing

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "../_components/site-shell";
+import { OG_BASE } from "../_lib/seo";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -8,6 +9,13 @@ export const metadata: Metadata = {
     "How Frames handles visitor information on framesmizoram.com. Frames supplies and installs uPVC windows and doors in Aizawl and across Mizoram.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/privacy-policy" },
+  openGraph: {
+    ...OG_BASE,
+    title: "Privacy Policy | Frames",
+    description:
+      "How Frames handles visitor information on framesmizoram.com.",
+    url: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicy() {

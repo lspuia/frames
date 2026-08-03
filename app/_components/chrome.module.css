@@ -18,6 +18,11 @@
   border-bottom: 2px solid var(--color-divider);
 }
 
+.logoLink {
+  display: block;
+  line-height: 0;
+}
+
 .logo {
   display: block;
   width: clamp(200px, 26vw, 320px);

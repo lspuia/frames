@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 
@@ -14,10 +14,23 @@ export const metadata: Metadata = {
   title: "Frames — uPVC Windows & Doors in Mizoram | Coming Soon",
   description:
     "Frames brings German-engineered uPVC windows and doors to Mizoram — casement, sliding and tilt-and-turn systems built for heavy rain, wind and noise, supplied and installed in Aizawl and across the state. Website launching soon.",
-  robots: { index: true, follow: true },
+  applicationName: "Frames",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      // Let Google use a full-size image preview and an unclipped snippet.
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     siteName: "Frames",
+    locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
@@ -26,6 +39,10 @@ export const metadata: Metadata = {
     "geo.region": "IN-MZ",
     "geo.placename": "Aizawl, Mizoram",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f3f2f2",
 };
 
 export default function RootLayout({

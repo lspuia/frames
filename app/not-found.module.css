@@ -1,0 +1,39 @@
+.main {
+  flex: 1;
+  padding: clamp(40px, 7vw, 88px) clamp(20px, 5vw, 72px);
+}
+
+.code {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+  margin: 0 0 10px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+
+.body {
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 46ch;
+  margin: 0 0 28px;
+  color: var(--color-neutral-700);
+  text-wrap: pretty;
+}
+
+.link {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-block: 12px;
+}
