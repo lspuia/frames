@@ -16,6 +16,14 @@
   text-wrap: balance;
 }
 
+.lead {
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.55;
+  max-width: 52ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+
 .todo {
   font-size: 15px;
   line-height: 1.6;
@@ -52,6 +60,10 @@
   margin-bottom: 0;
 }
 
-.pending {
+.updated {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--color-neutral-700);
+  margin: 0;
 }

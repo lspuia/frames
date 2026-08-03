@@ -46,8 +46,12 @@ footer/meta labels 600.
 
 - The Instagram and Facebook URLs in `app/_components/site-shell.tsx` are
   **placeholders** — swap them for the real handles.
-- The privacy policy is scaffolding. Every section carries a visible
-  `TODO: owner to supply`; nothing there is a legal commitment yet.
+- The privacy policy describes the site as it actually is: no forms, no cookies,
+  no third-party requests, fonts self-hosted. **Those statements stop being true the
+  moment you add an enquiry form, analytics, an embedded map or a chat widget** —
+  update the copy and the `LAST_UPDATED` constant in the same change. The contact
+  section is still a visible `TODO: owner to supply`, and the policy has not been
+  reviewed by a lawyer.
 - `window-sill.jpg` is a stock photo. Confirm the license covers commercial use
   before launch, and replace it with a real project photo when one exists.
 - The photo box uses `flex: 1 1 auto` plus a definite `min-height`. With `flex: 1`
