@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SITE_URL } from "./_lib/seo";
 import "./globals.css";
+
+/* Not a secret — a measurement ID is public in the page source by design.
+   Note this also reports preview deployments into the production property. */
+const GA_MEASUREMENT_ID = "G-R4GVNL5DPM";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -60,6 +65,9 @@ export default function RootLayout({
             described in /privacy-policy. */}
         <Analytics />
       </body>
+      {/* Google Analytics sets cookies and sends data to Google — keep the
+          cookies and opt-out sections of /privacy-policy in step with it. */}
+      <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>
   );
 }

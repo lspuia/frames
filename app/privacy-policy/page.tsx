@@ -6,17 +6,19 @@ import styles from "./page.module.css";
 /* Update this whenever the copy below changes. */
 const LAST_UPDATED = "4 August 2026";
 
+const GA_OPT_OUT_URL = "https://tools.google.com/dlpage/gaoptout";
+
 export const metadata: Metadata = {
   title: "Privacy Policy | Frames — uPVC Windows & Doors in Mizoram",
   description:
-    "How framesmizoram.in handles visitor information: no forms, no cookies, and anonymous page-view analytics only. Frames supplies and installs uPVC windows and doors in Aizawl and across Mizoram.",
+    "How framesmizoram.in handles visitor information: what Google Analytics and Vercel Analytics record, the cookies they set, and how to opt out. Frames supplies and installs uPVC windows and doors in Aizawl and across Mizoram.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/privacy-policy" },
   openGraph: {
     ...OG_BASE,
     title: "Privacy Policy | Frames",
     description:
-      "How framesmizoram.in handles visitor information: no forms, no cookies, and anonymous page-view analytics only.",
+      "What framesmizoram.in records about your visit, the cookies it sets, and how to opt out.",
     url: "/privacy-policy",
   },
 };
@@ -31,9 +33,9 @@ export default function PrivacyPolicy() {
           <p className={styles.lead}>
             Frames supplies and installs uPVC windows and doors in Aizawl and
             across Mizoram. This policy covers what happens to your information
-            when you visit framesmizoram.in. The short version: this is a
-            single page announcing our launch, it has no forms and sets no
-            cookies, and the only thing we measure is anonymous page views.
+            when you visit framesmizoram.in. The short version: this page has no
+            forms, so we never ask you for personal details — but we do measure
+            how the site is used, and one of those tools sets cookies.
           </p>
 
           <section className={styles.section}>
@@ -47,45 +49,68 @@ export default function PrivacyPolicy() {
               website.
             </p>
             <p className={styles.body}>
-              We do measure how the site is used. For each page view our
-              analytics records the page you looked at, the site or search
-              engine that sent you here, your approximate location (country,
-              region and city), your device type, operating system and browser,
-              and the time of the visit. It does not record your IP address, and
-              the record cannot be traced back to you.
+              We use two measurement tools — Google Analytics and Vercel Web
+              Analytics. Between them they record, for each page view, the page
+              you looked at, the site or search engine that sent you here, your
+              approximate location, your device type, operating system and
+              browser, and the time of the visit. We see the results only as
+              totals and trends; neither tool tells us who you are.
             </p>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Cookies and tracking</h2>
+            <h2 className={styles.sectionTitle}>Cookies</h2>
             <p className={styles.body}>
-              This site sets no cookies and stores nothing in your browser,
-              which is why you see no cookie banner. Our analytics is
-              deliberately cookieless: rather than saving an identifier on your
-              device, it counts a visit using a value derived from the request
-              itself, and that value is discarded after 24 hours.
+              Google Analytics sets two cookies in your browser:{" "}
+              <code>_ga</code>, which lets it tell one visitor from another, and{" "}
+              <code>_ga_</code> followed by an identifier, which keeps track of a
+              single visit. Google&rsquo;s default lifetime for both is two
+              years, though browsers cut this down in practice — Chrome caps
+              them at 400 days, and Safari at seven days if you do not come
+              back.
             </p>
             <p className={styles.body}>
-              There are no advertising or remarketing tags and no social media
-              tracking pixels. Nothing here follows you to other websites or
-              builds a profile of you over time.
+              Vercel Web Analytics, the second tool, is cookieless. Instead of
+              storing anything on your device it counts a visit using a value
+              derived from the request itself, and discards it after 24 hours.
+            </p>
+            <p className={styles.body}>
+              We set no advertising or remarketing cookies, and there are no
+              social media tracking pixels on this site.
+            </p>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Opting out</h2>
+            <p className={styles.body}>
+              If you would rather not be counted by Google Analytics, Google
+              publishes an official opt-out browser add-on at{" "}
+              <a href={GA_OPT_OUT_URL} target="_blank" rel="noopener">
+                tools.google.com/dlpage/gaoptout
+              </a>
+              , which stops data being sent from any site you visit, not just
+              this one. Your browser settings also let you block or delete
+              cookies for an individual site, and any content or ad blocker that
+              blocks Google Analytics will stop it loading here.
             </p>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Third-party content</h2>
             <p className={styles.body}>
-              Everything the page needs — the typeface, the images and the
-              stylesheets — is served from our own domain, so viewing this site
-              does not send a request to an outside font network or an
-              advertising network. There are no embedded maps, videos or chat
-              widgets.
+              The page itself is served entirely from our own domain — the
+              typeface, the images and the stylesheets all come from us, so none
+              of that reaches an outside company. There are no embedded maps,
+              videos or chat widgets.
             </p>
             <p className={styles.body}>
-              The exception is the analytics described above. Its script is also
-              served from our own domain, and the anonymous measurements it
-              produces go to Vercel, the company that hosts this website, who
-              handle them on our behalf.
+              The measurement tools are the exception. Google Analytics is
+              loaded from Google&rsquo;s servers, which means Google receives
+              information about your visit, including your IP address, which it
+              uses to work out your approximate location. What Google then does
+              with that data is governed by its own privacy policy. Vercel Web
+              Analytics is served from our own domain and sends its anonymous
+              measurements to Vercel.
             </p>
           </section>
 
@@ -93,23 +118,25 @@ export default function PrivacyPolicy() {
             <h2 className={styles.sectionTitle}>Server logs</h2>
             <p className={styles.body}>
               Like every website, framesmizoram.in is delivered by a hosting
-              provider — Vercel — and that provider automatically records standard
-              technical details with each request — typically the IP address,
-              the browser and device type, the page requested and the time it
-              was requested. This happens at the server level for every site you
-              visit and is what makes it possible to serve the page and to
-              protect it from abuse. We do not use these records for marketing,
-              build profiles from them, or combine them with anything else.
+              provider — Vercel — and that provider automatically records
+              standard technical details with each request: typically the IP
+              address, the browser and device type, the page requested and the
+              time it was requested. This happens at the server level for every
+              site you visit and is what makes it possible to serve the page and
+              to protect it from abuse. We do not use these records for
+              marketing, build profiles from them, or combine them with anything
+              else.
             </p>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Sharing your information</h2>
             <p className={styles.body}>
-              We do not sell, rent or trade personal information. The only
-              company that receives anything from this website is Vercel, which
-              hosts the site and processes the anonymous page-view measurements
-              on our behalf.
+              We do not sell, rent or trade personal information. Two companies
+              receive data from this website: Vercel, which hosts it and
+              processes the page-view measurements, and Google, which provides
+              Google Analytics. Each handles that data under its own privacy
+              policy.
             </p>
           </section>
 
@@ -129,13 +156,13 @@ export default function PrivacyPolicy() {
             <p className={styles.body}>
               Data protection law in India gives you rights over personal
               information a business holds about you, such as the right to see
-              it, correct it or have it deleted. This website holds no personal
-              information about you: the page-view measurements described above
-              are anonymous and cannot be linked back to any individual, so
-              there is no record here tied to your identity for us to show,
-              correct or delete. If we ever add a form or anything else that
-              collects personal details, this policy will explain how to
-              exercise those rights.
+              it, correct it or have it deleted. We hold no name, phone number
+              or email address for you, because this site never asks for one,
+              and the analytics reaches us only as totals and trends that we
+              cannot trace back to any individual. If you would prefer not to be
+              counted at all, see &ldquo;Opting out&rdquo; above. If we later add
+              a form or anything else that collects personal details directly,
+              this policy will explain how to exercise those rights.
             </p>
           </section>
 

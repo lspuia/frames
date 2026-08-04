@@ -46,12 +46,17 @@ footer/meta labels 600.
 
 - The Instagram and Facebook URLs live in `app/_components/site-shell.tsx` and are
   repeated as `sameAs` in the homepage JSON-LD — change both together.
-- The privacy policy describes the site as it actually is: no forms, no cookies,
-  fonts self-hosted, and cookieless page-view analytics via `@vercel/analytics`.
-  **Those statements stop being true the moment you add an enquiry form, an embedded
-  map or a chat widget** — update the copy and the `LAST_UPDATED` constant in the
-  same change. The contact section is still a visible `TODO: owner to supply`, and
-  the policy has not been reviewed by a lawyer.
+- Two analytics tools run: `@vercel/analytics` (cookieless) and Google Analytics
+  via `@next/third-parties`, whose measurement ID sits in `app/layout.tsx`.
+- The privacy policy documents both by name, the exact cookies GA sets, and how to
+  opt out. **Any change to what loads on the page — a form, an embedded map, a chat
+  widget, dropping or adding an analytics tool — makes some of that copy false.**
+  Update the policy and the `LAST_UPDATED` constant in the same commit.
+  The contact section is still a visible `TODO: owner to supply`, and the policy has
+  not been reviewed by a lawyer.
+- The policy deliberately does **not** claim Google discards your IP address: Google
+  documents that guarantee only for EU/UK/Swiss traffic, and this site's visitors are
+  in India.
 - `window-sill.jpg` is a stock photo. Confirm the license covers commercial use
   before launch, and replace it with a real project photo when one exists.
 - The photo box uses `flex: 1 1 auto` plus a definite `min-height`. With `flex: 1`
