@@ -44,14 +44,14 @@ footer/meta labels 600.
 
 ## Notes for the next change
 
-- The Instagram and Facebook URLs in `app/_components/site-shell.tsx` are
-  **placeholders** — swap them for the real handles.
+- The Instagram and Facebook URLs live in `app/_components/site-shell.tsx` and are
+  repeated as `sameAs` in the homepage JSON-LD — change both together.
 - The privacy policy describes the site as it actually is: no forms, no cookies,
-  no third-party requests, fonts self-hosted. **Those statements stop being true the
-  moment you add an enquiry form, analytics, an embedded map or a chat widget** —
-  update the copy and the `LAST_UPDATED` constant in the same change. The contact
-  section is still a visible `TODO: owner to supply`, and the policy has not been
-  reviewed by a lawyer.
+  fonts self-hosted, and cookieless page-view analytics via `@vercel/analytics`.
+  **Those statements stop being true the moment you add an enquiry form, an embedded
+  map or a chat widget** — update the copy and the `LAST_UPDATED` constant in the
+  same change. The contact section is still a visible `TODO: owner to supply`, and
+  the policy has not been reviewed by a lawyer.
 - `window-sill.jpg` is a stock photo. Confirm the license covers commercial use
   before launch, and replace it with a real project photo when one exists.
 - The photo box uses `flex: 1 1 auto` plus a definite `min-height`. With `flex: 1`

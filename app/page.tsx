@@ -57,6 +57,12 @@ const jsonLd = {
       url: `${SITE_URL}/`,
       image: `${SITE_URL}/og-image.jpg`,
       logo: `${SITE_URL}/frames-logo.png`,
+      /* Ties the social profiles to this business as one entity. Keep in step
+         with the URLs in _components/site-shell.tsx. */
+      sameAs: [
+        "https://www.instagram.com/framesmizoram/",
+        "https://www.facebook.com/framesmizoram/",
+      ],
       areaServed: { "@type": "State", name: "Mizoram" },
       address: {
         "@type": "PostalAddress",

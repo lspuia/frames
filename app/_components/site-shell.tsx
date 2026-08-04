@@ -4,9 +4,9 @@ import Link from "next/link";
 import { FacebookIcon, InstagramIcon } from "./icons";
 import styles from "./chrome.module.css";
 
-/* Placeholders — swap for the real handles once the owner supplies them. */
-const INSTAGRAM_URL = "https://instagram.com/";
-const FACEBOOK_URL = "https://facebook.com/";
+/* Also listed as `sameAs` in the JSON-LD on the homepage — keep the two in step. */
+const INSTAGRAM_URL = "https://www.instagram.com/framesmizoram/";
+const FACEBOOK_URL = "https://www.facebook.com/framesmizoram/";
 
 function SiteHeader() {
   return (

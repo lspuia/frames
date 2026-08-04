@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "./_lib/seo";
 import "./globals.css";
 
@@ -53,7 +54,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={archivo.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Cookieless page-view analytics. Anything this collects has to stay
+            described in /privacy-policy. */}
+        <Analytics />
+      </body>
     </html>
   );
 }

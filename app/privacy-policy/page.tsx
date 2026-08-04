@@ -4,19 +4,19 @@ import { OG_BASE } from "../_lib/seo";
 import styles from "./page.module.css";
 
 /* Update this whenever the copy below changes. */
-const LAST_UPDATED = "3 August 2026";
+const LAST_UPDATED = "4 August 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Frames — uPVC Windows & Doors in Mizoram",
   description:
-    "How framesmizoram.in handles visitor information: no forms, no cookies and no tracking. Frames supplies and installs uPVC windows and doors in Aizawl and across Mizoram.",
+    "How framesmizoram.in handles visitor information: no forms, no cookies, and anonymous page-view analytics only. Frames supplies and installs uPVC windows and doors in Aizawl and across Mizoram.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/privacy-policy" },
   openGraph: {
     ...OG_BASE,
     title: "Privacy Policy | Frames",
     description:
-      "How framesmizoram.in handles visitor information: no forms, no cookies and no tracking.",
+      "How framesmizoram.in handles visitor information: no forms, no cookies, and anonymous page-view analytics only.",
     url: "/privacy-policy",
   },
 };
@@ -32,8 +32,8 @@ export default function PrivacyPolicy() {
             Frames supplies and installs uPVC windows and doors in Aizawl and
             across Mizoram. This policy covers what happens to your information
             when you visit framesmizoram.in. The short version: this is a
-            single page announcing our launch, it has no forms and no tracking,
-            and it collects nothing about you.
+            single page announcing our launch, it has no forms and sets no
+            cookies, and the only thing we measure is anonymous page views.
           </p>
 
           <section className={styles.section}>
@@ -46,15 +46,29 @@ export default function PrivacyPolicy() {
               personal detail, and we have no way to receive them through this
               website.
             </p>
+            <p className={styles.body}>
+              We do measure how the site is used. For each page view our
+              analytics records the page you looked at, the site or search
+              engine that sent you here, your approximate location (country,
+              region and city), your device type, operating system and browser,
+              and the time of the visit. It does not record your IP address, and
+              the record cannot be traced back to you.
+            </p>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Cookies and tracking</h2>
             <p className={styles.body}>
-              This site sets no cookies at all. It uses no analytics, no
-              advertising or remarketing tags and no social media tracking
-              pixels, and it stores nothing in your browser. There is no cookie
-              banner here because there is nothing to consent to.
+              This site sets no cookies and stores nothing in your browser,
+              which is why you see no cookie banner. Our analytics is
+              deliberately cookieless: rather than saving an identifier on your
+              device, it counts a visit using a value derived from the request
+              itself, and that value is discarded after 24 hours.
+            </p>
+            <p className={styles.body}>
+              There are no advertising or remarketing tags and no social media
+              tracking pixels. Nothing here follows you to other websites or
+              builds a profile of you over time.
             </p>
           </section>
 
@@ -62,10 +76,16 @@ export default function PrivacyPolicy() {
             <h2 className={styles.sectionTitle}>Third-party content</h2>
             <p className={styles.body}>
               Everything the page needs — the typeface, the images and the
-              stylesheets — is served from our own domain. Viewing this site
-              does not send a request to any outside company such as a font
-              network, an analytics provider or an advertising network. There
-              are no embedded maps, videos or chat widgets.
+              stylesheets — is served from our own domain, so viewing this site
+              does not send a request to an outside font network or an
+              advertising network. There are no embedded maps, videos or chat
+              widgets.
+            </p>
+            <p className={styles.body}>
+              The exception is the analytics described above. Its script is also
+              served from our own domain, and the anonymous measurements it
+              produces go to Vercel, the company that hosts this website, who
+              handle them on our behalf.
             </p>
           </section>
 
@@ -73,7 +93,7 @@ export default function PrivacyPolicy() {
             <h2 className={styles.sectionTitle}>Server logs</h2>
             <p className={styles.body}>
               Like every website, framesmizoram.in is delivered by a hosting
-              provider, and that provider automatically records standard
+              provider — Vercel — and that provider automatically records standard
               technical details with each request — typically the IP address,
               the browser and device type, the page requested and the time it
               was requested. This happens at the server level for every site you
@@ -86,8 +106,10 @@ export default function PrivacyPolicy() {
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Sharing your information</h2>
             <p className={styles.body}>
-              We do not sell, rent or trade personal information, and we have
-              none from this website to share.
+              We do not sell, rent or trade personal information. The only
+              company that receives anything from this website is Vercel, which
+              hosts the site and processes the anonymous page-view measurements
+              on our behalf.
             </p>
           </section>
 
@@ -107,10 +129,13 @@ export default function PrivacyPolicy() {
             <p className={styles.body}>
               Data protection law in India gives you rights over personal
               information a business holds about you, such as the right to see
-              it, correct it or have it deleted. Because this website collects
-              and stores no personal information about visitors, there is
-              nothing here for us to show, correct or delete. If that changes,
-              this policy will explain how to exercise those rights.
+              it, correct it or have it deleted. This website holds no personal
+              information about you: the page-view measurements described above
+              are anonymous and cannot be linked back to any individual, so
+              there is no record here tied to your identity for us to show,
+              correct or delete. If we ever add a form or anything else that
+              collects personal details, this policy will explain how to
+              exercise those rights.
             </p>
           </section>
 
@@ -120,8 +145,8 @@ export default function PrivacyPolicy() {
               This site will grow into a full website with product information
               and a way to request a quotation. When we add anything that
               collects personal information — an enquiry form, a callback
-              request, analytics — we will update this policy to describe it,
-              and the date below will change.
+              request, an embedded map — we will update this policy to describe
+              it, and the date below will change.
             </p>
           </section>
 
