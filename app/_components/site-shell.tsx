@@ -1,13 +1,17 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FacebookIcon, InstagramIcon } from "./icons";
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "./icons";
 import { NavLinks } from "./nav-links";
 import styles from "./chrome.module.css";
 
 /* Also listed as `sameAs` in the JSON-LD on the homepage — keep the two in step. */
 const INSTAGRAM_URL = "https://www.instagram.com/framesmizoram/";
 const FACEBOOK_URL = "https://www.facebook.com/framesmizoram/";
+/* Same number as /contact and the homepage JSON-LD — change all together. */
+const WHATSAPP_URL =
+  "https://wa.me/919362663457?text=" +
+  encodeURIComponent("Hi Frames — I'd like a quote for uPVC windows.");
 
 function SiteHeader() {
   return (
@@ -81,12 +85,28 @@ function SiteFooter() {
   );
 }
 
+function WhatsAppButton() {
+  return (
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat with us on WhatsApp"
+      className={styles.whatsapp}
+    >
+      <WhatsAppIcon size={26} />
+      <span className={styles.whatsappLabel}>WhatsApp</span>
+    </a>
+  );
+}
+
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className={styles.page}>
       <SiteHeader />
       {children}
       <SiteFooter />
+      <WhatsAppButton />
     </div>
   );
 }

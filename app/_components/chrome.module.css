@@ -147,3 +147,49 @@
   color: var(--color-accent);
   box-shadow: inset 0 -2px 0 var(--color-accent);
 }
+
+/* — floating WhatsApp button — */
+
+/* WhatsApp brand green for instant recognition; square corners to stay inside
+   the design system. The label collapses away on phones, leaving a 56px tile. */
+.whatsapp {
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: clamp(16px, 3vw, 32px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 18px;
+  background: #25d366;
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+}
+
+.whatsapp:hover {
+  background: #1eb958;
+  color: #fff;
+}
+
+.whatsapp:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.whatsappLabel {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .whatsapp {
+    padding: 15px;
+  }
+
+  .whatsappLabel {
+    display: none;
+  }
+}
