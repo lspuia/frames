@@ -6,7 +6,7 @@ import mk from "../_components/marketing.module.css";
 export const metadata: Metadata = {
   title: "Contact Frames — uPVC Windows & Doors Quotes in Mizoram",
   description:
-    "Get a quote for aluplast uPVC windows and doors in Aizawl and across Mizoram. Reach Frames on Instagram or Facebook — site visits and itemized quotations.",
+    "Get a quote for aluplast uPVC windows and doors in Aizawl and across Mizoram. Reach Frames on WhatsApp, Instagram or Facebook — site visits and itemized quotations.",
   alternates: { canonical: "/contact" },
   openGraph: {
     ...OG_BASE,
@@ -19,17 +19,30 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-    { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": `${SITE_URL}/contact#webpage`,
+      url: `${SITE_URL}/contact`,
+      name: "Contact Frames",
+      inLanguage: "en-IN",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#business` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
+      ],
+    },
   ],
 };
 
 /* No contact form on purpose: the privacy policy documents exactly what this
-   site collects, and a form would change that. When the owner supplies a
-   phone number / address, add them to REACH below, to the LocalBusiness
-   JSON-LD on the homepage, and check the policy still holds. */
+   site collects, and a form would change that. The WhatsApp number is repeated
+   as `telephone` in the LocalBusiness JSON-LD on the homepage — change both
+   together. When a showroom address exists, add it here and to the JSON-LD. */
 const REACH = [
   {
     label: "Instagram",
@@ -42,14 +55,9 @@ const REACH = [
     href: "https://www.facebook.com/framesmizoram/",
   },
   {
-    label: "Phone / WhatsApp",
-    value: "Number coming soon — DM us meanwhile",
-    href: null,
-  },
-  {
-    label: "Showroom",
-    value: "Aizawl — address to be announced",
-    href: null,
+    label: "WhatsApp",
+    value: "+91 93626 63457",
+    href: "https://wa.me/919362663457",
   },
 ];
 
@@ -85,9 +93,9 @@ export default function ContactPage() {
             <p className={mk.kicker}>Contact</p>
             <h1 className={mk.pageTitle}>Get a quote.</h1>
             <p className={mk.intro}>
-              Message us on Instagram or Facebook to start — tell us where the
-              project is and roughly how many openings, and we&rsquo;ll set up
-              a site visit. Every quotation is measured, itemized and in
+              Message us on WhatsApp to start — or DM us on Instagram or
+              Facebook. Tell us where the project is and roughly how many
+              openings, and we&rsquo;ll set up a site visit. Every quotation is measured, itemized and in
               writing.
             </p>
           </header>

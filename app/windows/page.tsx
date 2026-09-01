@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteShell } from "../_components/site-shell";
+import { FinishesSection } from "../_components/finishes";
 import { SystemDiagram } from "../_components/diagrams";
 import { OG_BASE, SITE_URL } from "../_lib/seo";
 import { EXTRAS, WINDOW_SYSTEMS, type System } from "../_lib/systems";
@@ -109,6 +111,16 @@ export default function WindowsPage() {
               Every window is made to your measured sizes; nothing here is
               off-the-shelf.
             </p>
+            <div className={mk.heroBrand}>
+              <span className={mk.heroBrandLabel}>Systems by</span>
+              <Image
+                src="/aluplast-logo.svg"
+                alt="aluplast"
+                width={836}
+                height={385}
+                className={mk.heroBrandLogo}
+              />
+            </div>
           </header>
 
           {WINDOW_SYSTEMS.map((system) => (
@@ -139,6 +151,8 @@ export default function WindowsPage() {
               ))}
             </div>
           </section>
+
+          <FinishesSection />
 
           <section className={mk.cta} aria-labelledby="windows-cta">
             <h2 id="windows-cta" className={mk.ctaTitle}>

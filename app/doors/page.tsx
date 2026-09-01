@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteShell } from "../_components/site-shell";
+import { FinishesSection } from "../_components/finishes";
 import { SystemDiagram } from "../_components/diagrams";
 import { OG_BASE, SITE_URL } from "../_lib/seo";
 import { DOOR_SYSTEMS, type System } from "../_lib/systems";
@@ -108,11 +110,23 @@ export default function DoorsPage() {
               away — hinged, sliding and lift-slide systems on the same
               reinforced aluplast profile as the windows, in matching finishes.
             </p>
+            <div className={mk.heroBrand}>
+              <span className={mk.heroBrandLabel}>Systems by</span>
+              <Image
+                src="/aluplast-logo.svg"
+                alt="aluplast"
+                width={836}
+                height={385}
+                className={mk.heroBrandLogo}
+              />
+            </div>
           </header>
 
           {DOOR_SYSTEMS.map((system) => (
             <SystemSection key={system.slug} system={system} />
           ))}
+
+          <FinishesSection />
 
           <section className={mk.cta} aria-labelledby="doors-cta">
             <h2 id="doors-cta" className={mk.ctaTitle}>

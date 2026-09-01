@@ -406,3 +406,112 @@ a.cellMore:hover {
   color: var(--color-accent);
   border-bottom-color: var(--color-accent);
 }
+
+/* — aluplast brand plate in the "why aluplast" sections — */
+
+.brandLogo {
+  width: clamp(150px, 18vw, 210px);
+  height: auto;
+  margin: 0 0 22px;
+}
+
+/* — "Systems by aluplast" row closing an interior page hero — */
+
+.heroBrand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 18px;
+  padding-right: 32px;
+  border-top: 2px solid var(--color-divider);
+  width: fit-content;
+}
+
+.heroBrandLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+  white-space: nowrap;
+}
+
+.heroBrandLogo {
+  width: clamp(100px, 11vw, 140px);
+  height: auto;
+  flex: none;
+}
+
+/* — finishes: flat tone chips per finish family — */
+
+.finishGroup {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  gap: clamp(20px, 3vw, 48px);
+  padding: clamp(24px, 3vw, 36px) 0;
+  border-top: 2px solid var(--color-divider);
+  margin-top: 28px;
+}
+
+.finishGroup:first-of-type {
+  margin-top: 32px;
+}
+
+.finishHead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.finishName {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.finishBlurb {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--color-neutral-800);
+  margin: 0 0 4px;
+  max-width: 40ch;
+  text-wrap: pretty;
+}
+
+.swatches {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: 14px 10px;
+  align-content: start;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.swatchChip {
+  display: block;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-divider);
+}
+
+.swatchName {
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  color: var(--color-neutral-800);
+}
+
+@media (max-width: 720px) {
+  .finishGroup {
+    grid-template-columns: 1fr;
+  }
+}

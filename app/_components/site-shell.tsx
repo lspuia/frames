@@ -2,18 +2,12 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FacebookIcon, InstagramIcon } from "./icons";
+import { NavLinks } from "./nav-links";
 import styles from "./chrome.module.css";
 
 /* Also listed as `sameAs` in the JSON-LD on the homepage — keep the two in step. */
 const INSTAGRAM_URL = "https://www.instagram.com/framesmizoram/";
 const FACEBOOK_URL = "https://www.facebook.com/framesmizoram/";
-
-const NAV_LINKS = [
-  { href: "/windows", label: "Windows" },
-  { href: "/doors", label: "Doors" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-] as const;
 
 function SiteHeader() {
   return (
@@ -35,11 +29,7 @@ function SiteHeader() {
         </div>
       </div>
       <nav aria-label="Main" className={styles.nav}>
-        {NAV_LINKS.map(({ href, label }) => (
-          <Link key={href} href={href} className={styles.navLink}>
-            {label}
-          </Link>
-        ))}
+        <NavLinks />
         <Link href="/contact" className={styles.navCta}>
           Get a quote
         </Link>
@@ -74,9 +64,18 @@ function SiteFooter() {
           Privacy policy
         </Link>
       </div>
-      <div className={styles.copyright}>
-        © {new Date().getFullYear()} Frames · Mizoram, India · aluplast uPVC
-        systems, supplied &amp; installed
+      <div className={styles.copyrightRow}>
+        <Image
+          src="/aluplast-logo.svg"
+          alt="aluplast"
+          width={836}
+          height={385}
+          className={styles.footerBrandLogo}
+        />
+        <div className={styles.copyright}>
+          © {new Date().getFullYear()} Frames · Mizoram, India · aluplast uPVC
+          systems, supplied &amp; installed
+        </div>
       </div>
     </footer>
   );

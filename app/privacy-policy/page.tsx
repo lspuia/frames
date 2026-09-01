@@ -4,7 +4,7 @@ import { OG_BASE } from "../_lib/seo";
 import styles from "./page.module.css";
 
 /* Update this whenever the copy below changes. */
-const LAST_UPDATED = "4 August 2026";
+const LAST_UPDATED = "1 September 2026";
 
 const GA_OPT_OUT_URL = "https://tools.google.com/dlpage/gaoptout";
 
@@ -179,10 +179,10 @@ export default function PrivacyPolicy() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Contact</h2>
-            <p className={styles.todo}>
-              TODO: owner to supply — an email address or phone number for
-              privacy questions. Until one is published here, this section is
-              incomplete.
+            <p className={styles.body}>
+              For questions about this policy or about any data this site
+              collects, contact us on WhatsApp at{" "}
+              <a href="https://wa.me/919362663457">+91 93626 63457</a>.
             </p>
           </section>
 

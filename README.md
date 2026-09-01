@@ -51,16 +51,18 @@ footer/meta labels 600. Product imagery is currently the SVG line diagrams in
 ## Notes for the next change
 
 - **The brand is now public.** The site names aluplast throughout (the old
-  coming-soon rule against naming a supplier is retired). Product names and
-  spec figures in `app/_lib/systems.ts` come from aluplast's published India
-  material — re-verify against the current catalogue before adding numbers.
+  coming-soon rule against naming a supplier is retired). Product names, spec
+  figures and the finish programme in `app/_lib/systems.ts` come from the
+  aluplast India brochures in `_handoff/brochures/` (marked "may be subject to
+  change") — check there before editing any number.
 - The Instagram and Facebook URLs live in `app/_components/site-shell.tsx` and are
   repeated as `sameAs` in the homepage JSON-LD — change both together.
 - **No contact form, on purpose.** The privacy policy documents exactly what the
   site collects; a form (or map embed, or chat widget) makes that copy false.
   If one is added, update `/privacy-policy` and its `LAST_UPDATED` in the same
-  commit. Phone number and showroom address are still placeholders on `/contact` —
-  when supplied, also add them to the homepage LocalBusiness JSON-LD.
+  commit. The WhatsApp number on `/contact` is repeated as `telephone` in the
+  homepage LocalBusiness JSON-LD — change both together. The showroom address is
+  still to come; when supplied, add it to both places too.
 - Two analytics tools run: `@vercel/analytics` (cookieless) and Google Analytics
   via `@next/third-parties`, whose measurement ID sits in `app/layout.tsx`.
 - The policy deliberately does **not** claim Google discards your IP address: Google

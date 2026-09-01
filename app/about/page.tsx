@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteShell } from "../_components/site-shell";
 import { OG_BASE, SITE_URL } from "../_lib/seo";
@@ -21,10 +22,23 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-    { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": `${SITE_URL}/about#webpage`,
+      url: `${SITE_URL}/about`,
+      name: "About Frames",
+      inLanguage: "en-IN",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#business` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
+      ],
+    },
   ],
 };
 
@@ -66,6 +80,13 @@ export default function AboutPage() {
 
           <section className={mk.section} aria-labelledby="brand">
             <p className={mk.kicker}>The brand we build with</p>
+            <Image
+              src="/aluplast-logo.svg"
+              alt=""
+              width={836}
+              height={385}
+              className={mk.brandLogo}
+            />
             <h2 id="brand" className={mk.heading}>
               aluplast, since 1982.
             </h2>

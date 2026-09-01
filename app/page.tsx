@@ -55,7 +55,7 @@ const CLIMATE_CASE = [
   },
   {
     title: "No repainting, ever",
-    body: "The color is in the material, not on it. No annual painting, no varnish, no rust streaks down the wall. Soap and water is the whole maintenance schedule.",
+    body: "The color is in the material, not on it — aluplast's UV-resistant tropical compound is made for high-radiation climates like India's, so it doesn't discolor. No painting, no varnish; soap and water is the whole maintenance schedule.",
   },
   {
     title: "Termite & rot proof",
@@ -108,6 +108,8 @@ const jsonLd = {
         "https://www.instagram.com/framesmizoram/",
         "https://www.facebook.com/framesmizoram/",
       ],
+      /* WhatsApp number — also shown on /contact; change both together. */
+      telephone: "+91 93626 63457",
       brand: { "@type": "Brand", name: "aluplast" },
       areaServed: { "@type": "State", name: "Mizoram" },
       address: {
@@ -186,6 +188,16 @@ export default function Home() {
                 painting. Homes, hotels, offices, schools and institutional
                 projects.
               </p>
+              <div className={styles.heroBrand}>
+                <span className={styles.heroBrandLabel}>Systems by</span>
+                <Image
+                  src="/aluplast-logo.svg"
+                  alt="aluplast"
+                  width={836}
+                  height={385}
+                  className={styles.heroBrandLogo}
+                />
+              </div>
             </div>
 
             <aside className={styles.side}>
@@ -194,6 +206,7 @@ export default function Home() {
                   src="/window-sill.jpg"
                   alt="Woman sitting on a windowsill beside a white uPVC tilt-and-turn window"
                   fill
+                  priority
                   sizes="(max-width: 1023px) 100vw, 43vw"
                 />
               </div>
@@ -237,8 +250,9 @@ export default function Home() {
             </h2>
             <p className={mk.intro}>
               The full aluplast catalogue — from the IDEAL casement series to
-              the panoramic lift-slide 85 — in white, woodgrain foils and
-              aluminium-look finishes.
+              the panoramic lift-slide 85 — in white, woodec woodgrain, aludec
+              aluminium-look and classic decor{" "}
+              <Link href="/windows#finishes">finishes</Link>.
             </p>
             <div className={mk.grid}>
               {RANGE.map((item) => (
@@ -266,6 +280,13 @@ export default function Home() {
           {/* — why aluplast — */}
           <section className={mk.section} aria-labelledby="why-aluplast">
             <p className={mk.kicker}>The brand</p>
+            <Image
+              src="/aluplast-logo.svg"
+              alt=""
+              width={836}
+              height={385}
+              className={mk.brandLogo}
+            />
             <h2 id="why-aluplast" className={mk.heading}>
               Why aluplast.
             </h2>
