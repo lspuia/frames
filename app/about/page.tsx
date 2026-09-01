@@ -89,13 +89,13 @@ export default function AboutPage() {
           <section className={mk.section} aria-labelledby="area">
             <p className={mk.kicker}>Where we work</p>
             <h2 id="area" className={mk.heading}>
-              Aizawl, and all of Mizoram.
+              Based in Aizawl, serving Mizoram.
             </h2>
             <p className={mk.intro}>
-              We&rsquo;re based in Aizawl and take on projects across the state
-              — Lunglei, Champhai, Serchhip, Kolasib, Lawngtlai, Saiha, Mamit,
-              Khawzawl, Saitual and Hnahthial districts included. Residential,
-              hospitality, institutional and commercial.
+              We&rsquo;re based in Aizawl, where most of our work happens, and
+              we take on projects elsewhere in Mizoram depending on the site
+              and the scope — get in touch and we&rsquo;ll see what&rsquo;s
+              possible. Residential, hospitality, institutional and commercial.
             </p>
           </section>
 

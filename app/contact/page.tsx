@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     ...OG_BASE,
     title: "Contact Frames",
     description:
-      "Site visits and itemized quotations for uPVC windows and doors, anywhere in Mizoram.",
+      "Site visits and itemized quotations for uPVC windows and doors in Mizoram.",
     url: "/contact",
   },
 };

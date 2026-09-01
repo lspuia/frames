@@ -66,7 +66,7 @@ const CLIMATE_CASE = [
 const PROCESS = [
   {
     title: "Site visit & measurement",
-    body: "We measure every opening on site in Aizawl or anywhere in Mizoram, and talk through systems, glass and mesh for each room.",
+    body: "We measure every opening on site and talk through systems, glass and mesh for each room.",
   },
   {
     title: "Quotation",
@@ -308,8 +308,7 @@ export default function Home() {
             </h2>
             <p className={mk.ctaBody}>
               Tell us about your project — we&rsquo;ll visit, measure and put
-              together an itemized quotation for every opening. Aizawl and all
-              of Mizoram.
+              together an itemized quotation for every opening.
             </p>
             <div className={mk.ctaActions}>
               <Link href="/contact" className={mk.ctaPrimary}>
