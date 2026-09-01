@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Frames — uPVC Windows & Doors in Mizoram",
     short_name: "Frames",
     description:
-      "uPVC windows and doors for homes and buildings in Aizawl and across Mizoram. Launching soon.",
+      "aluplast uPVC windows and doors for homes and buildings in Aizawl and across Mizoram.",
     start_url: "/",
     display: "standalone",
     background_color: "#f3f2f2",

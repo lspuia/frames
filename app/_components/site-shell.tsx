@@ -8,23 +8,42 @@ import styles from "./chrome.module.css";
 const INSTAGRAM_URL = "https://www.instagram.com/framesmizoram/";
 const FACEBOOK_URL = "https://www.facebook.com/framesmizoram/";
 
+const NAV_LINKS = [
+  { href: "/windows", label: "Windows" },
+  { href: "/doors", label: "Doors" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
 function SiteHeader() {
   return (
-    <header className={styles.header}>
-      <Link href="/" aria-label="Frames — home" className={styles.logoLink}>
-        <Image
-          src="/frames-logo.png"
-          alt="Frames"
-          width={320}
-          height={108}
-          priority
-          className={styles.logo}
-        />
-      </Link>
-      <div className={styles.headerMeta}>
-        <div>framesmizoram.in</div>
-        <div>Aizawl · Mizoram · India</div>
+    <header>
+      <div className={styles.header}>
+        <Link href="/" aria-label="Frames — home" className={styles.logoLink}>
+          <Image
+            src="/frames-logo.png"
+            alt="Frames"
+            width={320}
+            height={108}
+            priority
+            className={styles.logo}
+          />
+        </Link>
+        <div className={styles.headerMeta}>
+          <div>framesmizoram.in</div>
+          <div>Aizawl · Mizoram · India</div>
+        </div>
       </div>
+      <nav aria-label="Main" className={styles.nav}>
+        {NAV_LINKS.map(({ href, label }) => (
+          <Link key={href} href={href} className={styles.navLink}>
+            {label}
+          </Link>
+        ))}
+        <Link href="/contact" className={styles.navCta}>
+          Get a quote
+        </Link>
+      </nav>
     </header>
   );
 }
@@ -56,7 +75,8 @@ function SiteFooter() {
         </Link>
       </div>
       <div className={styles.copyright}>
-        © {new Date().getFullYear()} Frames · Mizoram, India
+        © {new Date().getFullYear()} Frames · Mizoram, India · aluplast uPVC
+        systems, supplied &amp; installed
       </div>
     </footer>
   );

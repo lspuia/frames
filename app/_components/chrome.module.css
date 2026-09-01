@@ -91,3 +91,39 @@
     align-items: flex-start;
   }
 }
+
+/* — main nav strip — */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+  padding: 0 clamp(20px, 5vw, 72px);
+  border-bottom: 2px solid var(--color-divider);
+  overflow-x: auto;
+}
+
+.navLink {
+  padding-block: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--color-accent);
+}
+
+.navCta {
+  margin-left: auto;
+  padding-block: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  white-space: nowrap;
+}

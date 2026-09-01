@@ -18,9 +18,9 @@ const archivo = Archivo({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Frames — uPVC Windows & Doors in Mizoram | Coming Soon",
+  title: "Frames — aluplast uPVC Windows & Doors in Mizoram",
   description:
-    "Frames brings German-engineered uPVC windows and doors to Mizoram — casement, sliding and tilt-and-turn systems built for heavy rain, wind and noise, supplied and installed in Aizawl and across the state. Website launching soon.",
+    "Frames brings German-engineered aluplast uPVC windows and doors to Mizoram — casement, sliding, tilt-and-turn and lift-slide systems built for heavy rain, wind and noise, supplied and installed in Aizawl and across the state.",
   applicationName: "Frames",
   robots: {
     index: true,
