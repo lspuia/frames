@@ -9,9 +9,9 @@ import { DOOR_SYSTEMS, type System } from "../_lib/systems";
 import mk from "../_components/marketing.module.css";
 
 export const metadata: Metadata = {
-  title: "uPVC Doors in Mizoram — aluplast smart-slide, vario-slide & lift-slide | Frames",
+  title: "uPVC Doors in Mizoram — smart-slide, vario-slide, lift-slide | Frames",
   description:
-    "The aluplast uPVC door range in Mizoram: casement and entrance doors, smart-slide, vario-slide and the panoramic lift-slide 85. Measured, fabricated and installed by Frames.",
+    "The aluplast uPVC door range in Mizoram: entrance doors, smart-slide, vario-slide and the panoramic lift-slide 85, in woodec, aludec and decor finishes. Measured, fabricated and installed by Frames.",
   alternates: { canonical: "/doors" },
   openGraph: {
     ...OG_BASE,

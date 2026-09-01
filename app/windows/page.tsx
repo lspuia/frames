@@ -9,15 +9,15 @@ import { EXTRAS, WINDOW_SYSTEMS, type System } from "../_lib/systems";
 import mk from "../_components/marketing.module.css";
 
 export const metadata: Metadata = {
-  title: "uPVC Windows in Mizoram — aluplast Casement, Sliding & Tilt-Turn | Frames",
+  title: "uPVC Windows in Mizoram — Casement, Sliding, Tilt & Turn | Frames",
   description:
-    "The aluplast uPVC window range in Mizoram: IDEAL series casement, sliding, tilt-and-turn and fixed glazing, with mosquito mesh and double glazing. Measured, fabricated and installed by Frames.",
+    "The aluplast uPVC window range in Mizoram: IDEAL series casement, prima-slide and easy-slide sliding, tilt-and-turn and fixed glazing, in woodec, aludec and decor finishes. Measured, fabricated and installed by Frames.",
   alternates: { canonical: "/windows" },
   openGraph: {
     ...OG_BASE,
     title: "aluplast uPVC Windows in Mizoram",
     description:
-      "IDEAL series casement, sliding, tilt-and-turn and fixed glazing — supplied and installed in Aizawl and across Mizoram.",
+      "IDEAL series casement, sliding, tilt-and-turn and fixed glazing in woodec, aludec and decor finishes — supplied and installed in Aizawl and across Mizoram.",
     url: "/windows",
   },
 };

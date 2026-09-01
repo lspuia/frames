@@ -1,15 +1,46 @@
+/* Homepage hero: the copy overlaid on the full-bleed colour photo (the one
+   deliberate exception to the design system's grayscale-photography rule). */
+
 .main {
-  display: grid;
+  position: relative;
   border-bottom: 2px solid var(--color-divider);
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  align-items: start;
 }
 
-/* — left cell: the copy — */
+/* — the photo behind — */
+
+.heroShot {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--color-neutral-200);
+}
+
+.heroShot img {
+  object-fit: cover;
+  object-position: 62% 62%;
+}
+
+/* Scrim: the image is bright, the text is ink — a bg-tinted wash keeps the
+   left column readable while the glazing stays visible on the right. */
+.heroShot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-bg) 92%, transparent) 0%,
+    color-mix(in srgb, var(--color-bg) 62%, transparent) 46%,
+    color-mix(in srgb, var(--color-bg) 8%, transparent) 78%
+  );
+}
+
+/* — the copy on top — */
 
 .copy {
-  padding: clamp(40px, 7vw, 88px) clamp(20px, 5vw, 72px);
-  border-right: 2px solid var(--color-divider);
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  padding: clamp(48px, 8vw, 112px) clamp(20px, 5vw, 72px);
 }
 
 .tagRow {
@@ -47,92 +78,6 @@
   text-wrap: pretty;
 }
 
-/* — right cell: photo + supply list — */
-
-.side {
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
-  min-height: 0;
-}
-
-/* `flex: 1 1 auto` + a definite min-height, never `flex: 1` — with a basis of 0
-   this box collapses to 0px inside the auto-height column and the photo vanishes. */
-.shot {
-  position: relative;
-  flex: 1 1 auto;
-  min-height: 380px;
-  overflow: hidden;
-  background: var(--color-neutral-200);
-}
-
-.shot img {
-  object-fit: cover;
-  object-position: 50% 35%;
-}
-
-.supply {
-  padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 48px);
-  border-top: 2px solid var(--color-divider);
-}
-
-/* An h2 so the page has a real heading outline; styled back down to the design's
-   11px meta label, so it reads as a label and not as a heading. */
-.supplyLabel {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.55;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-neutral-700);
-  margin: 0 0 10px;
-}
-
-.supplyBody {
-  font-size: 17px;
-  line-height: 1.5;
-}
-
-/* — tablet — */
-
-@media (max-width: 1023px) {
-  .main {
-    display: block;
-  }
-
-  .copy {
-    border-right: 0;
-    border-bottom: 2px solid var(--color-divider);
-  }
-
-  .shot {
-    flex: none;
-    height: 52vh;
-    max-height: 520px;
-  }
-
-  .shot img {
-    object-position: 28% 74%;
-  }
-}
-
-/* — phone — */
-
-@media (max-width: 640px) {
-  /* The source photo is 2:3, so a wide short box crops the subject out entirely. */
-  .shot {
-    flex: none;
-    height: auto;
-    max-height: none;
-    aspect-ratio: 4 / 5;
-  }
-
-  .shot img {
-    object-position: 26% 70%;
-  }
-}
-
 /* — aluplast mark closing the hero copy — */
 
 .heroBrand {
@@ -159,4 +104,11 @@
   width: clamp(110px, 12vw, 150px);
   height: auto;
   flex: none;
+}
+
+/* Phones: the copy fills more of the frame, so wash the whole image evenly. */
+@media (max-width: 640px) {
+  .heroShot::after {
+    background: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  }
 }

@@ -36,7 +36,7 @@ app/
 styles/
   modernist.css           design-system tokens and components, from the handoff
 public/
-  frames-logo.png  window-sill.jpg  og-image.jpg
+  frames-logo.png  home-hero.jpg  window-sill.jpg  og-image.jpg  aluplast-logo.svg
 ```
 
 ## Design system
@@ -68,12 +68,11 @@ footer/meta labels 600. Product imagery is currently the SVG line diagrams in
 - The policy deliberately does **not** claim Google discards your IP address: Google
   documents that guarantee only for EU/UK/Swiss traffic, and this site's visitors are
   in India.
-- `window-sill.jpg` is a stock photo. Confirm the license covers commercial use,
-  and replace it with a real project photo when one exists.
-- The photo box uses `flex: 1 1 auto` plus a definite `min-height`. With `flex: 1`
-  (basis 0) it collapses to 0px inside the auto-height column and the photo vanishes.
-- The `object-position` values per breakpoint are deliberate: the source photo is 2:3,
-  and at 390px and 820px both the woman and the wooden sill have to stay in frame.
+- The homepage hero is `home-hero.jpg` (from `_handoff/brochures/`, resized to
+  2400px) — shown **full colour** as the one deliberate exception to the
+  grayscale-photography rule. `window-sill.jpg` is no longer used on any page
+  (og-image.jpg derives from it); both are stock — confirm licenses before
+  wider use.
 
 ## Deploying
 

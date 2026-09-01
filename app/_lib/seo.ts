@@ -15,7 +15,7 @@ export const OG_BASE = {
       url: "/og-image.jpg",
       width: 1200,
       height: 630,
-      alt: "A white uPVC tilt-and-turn window with a woman sitting on the sill",
+      alt: "Bright living room with floor-to-ceiling uPVC glazing opening onto a lawn",
     },
   ],
 } satisfies NonNullable<Metadata["openGraph"]>;

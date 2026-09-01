@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "A white uPVC tilt-and-turn window with a woman sitting on the sill",
+        alt: "Bright living room with floor-to-ceiling uPVC glazing opening onto a lawn",
       },
     ],
   },
@@ -110,6 +110,13 @@ const jsonLd = {
       ],
       /* WhatsApp number — also shown on /contact; change both together. */
       telephone: "+91 93626 63457",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: "+91 93626 63457",
+        availableLanguage: ["en", "Mizo"],
+        areaServed: "IN-MZ",
+      },
       brand: { "@type": "Brand", name: "aluplast" },
       areaServed: { "@type": "State", name: "Mizoram" },
       address: {
@@ -159,8 +166,19 @@ export default function Home() {
       />
       <SiteShell>
         <main>
-          {/* — hero — */}
+          {/* — hero: copy overlaid on the full-bleed photo — */}
           <section className={styles.main}>
+            {/* Full-colour, deliberately exempt from the grayscale photo rule.
+                Sits behind the copy; a scrim keeps the text legible. */}
+            <div className={styles.heroShot} aria-hidden>
+              <Image
+                src="/home-hero.jpg"
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+              />
+            </div>
             <div className={styles.copy}>
               <div className={styles.tagRow}>
                 <span className={`tag tag-accent ${styles.tagText}`}>
@@ -199,25 +217,6 @@ export default function Home() {
                 />
               </div>
             </div>
-
-            <aside className={styles.side}>
-              <div className={`grayscale ${styles.shot}`}>
-                <Image
-                  src="/window-sill.jpg"
-                  alt="Woman sitting on a windowsill beside a white uPVC tilt-and-turn window"
-                  fill
-                  priority
-                  sizes="(max-width: 1023px) 100vw, 43vw"
-                />
-              </div>
-              <div className={styles.supply}>
-                <h2 className={styles.supplyLabel}>What we supply</h2>
-                <div className={styles.supplyBody}>
-                  uPVC casement &amp; sliding windows, tilt-and-turn windows,
-                  sliding &amp; casement doors, mosquito mesh, double glazing
-                </div>
-              </div>
-            </aside>
           </section>
 
           {/* — why uPVC here — */}
