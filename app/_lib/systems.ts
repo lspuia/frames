@@ -33,16 +33,14 @@ export const WINDOW_SYSTEMS: System[] = [
     slug: "ideal-casement",
     photos: "https://www.aluplast.net/in/uPVC-window-and-door/casement-window-door/",
     name: "IDEAL series casement",
-    kicker: "IDEAL 1000 · 2000 · 4000",
+    kicker: "IDEAL 1000 · 2000",
     summary:
-      "aluplast's core casement platform, in three steps. IDEAL 1000: a 54 mm, 3-chamber, made-in-India system for outward-opening windows. IDEAL 2000: 60 mm, 3 chambers, glazing to 35 mm and sound insulation to 43 dB. IDEAL 4000: the flagship 70 mm, 5-chamber profile — glazing to 41 mm, 45 dB sound insulation, burglary resistance up to RC2.",
+      "aluplast's core casement platform, in two steps. IDEAL 1000: a 54 mm, 3-chamber, made-in-India system for outward-opening windows. IDEAL 2000: 60 mm, 3 chambers, glazing to 35 mm and sound insulation to 43 dB.",
     specs: [
-      ["Profile depth", "54 / 60 / 70 mm (IDEAL 1000 / 2000 / 4000)"],
-      ["Chambers", "3 to 5"],
-      ["Glazing", "up to 24 / 35 / 41 mm by system"],
-      ["Thermal insulation", "Uf down to 1.3 W/m²K (IDEAL 4000)"],
-      ["Sound insulation", "up to 45 dB, class 4 (IDEAL 4000)"],
-      ["Security", "up to RC2 (IDEAL 4000)"],
+      ["Profile depth", "54 / 60 mm (IDEAL 1000 / 2000)"],
+      ["Chambers", "3"],
+      ["Glazing", "up to 24 / 35 mm by system"],
+      ["Sound insulation", "up to 43 dB (IDEAL 2000)"],
     ],
     bestFor:
       "Bedrooms and living rooms facing weather — a compressed-gasket casement is the tightest seal against wind-driven rain.",
@@ -68,7 +66,7 @@ export const WINDOW_SYSTEMS: System[] = [
   },
   {
     slug: "tilt-turn",
-    photos: "https://www.aluplast.net/in/uPVC-window-and-door/casement-window-door/ideal/ideal-4000/",
+    photos: "https://www.aluplast.net/in/uPVC-window-and-door/casement-window-door/",
     name: "Tilt & turn",
     kicker: "IDEAL platform",
     summary:
@@ -189,7 +187,7 @@ export const EXTRAS: System[] = [
   },
   {
     slug: "glazing",
-    photos: "https://www.aluplast.net/in/uPVC-window-and-door/casement-window-door/ideal/ideal-4000/",
+    photos: "https://www.aluplast.net/in/uPVC-window-and-door/casement-window-door/",
     name: "Double glazing",
     kicker: "Glass options",
     summary:
